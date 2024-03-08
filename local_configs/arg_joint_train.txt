@@ -1,0 +1,6 @@
+
+--project_name diml_fake_joint_1
+
+--mode joint_train
+--device 0
+--config local_configs/cfg/joint.diml.joint_id.py

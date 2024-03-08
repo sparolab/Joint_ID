@@ -1,0 +1,64 @@
+version: '3'
+
+services:
+  build_docker_images_gpu:
+    image: ${DOCKER_IMAGE}
+    build:
+      context: ./
+      dockerfile: ./${DOCKER_ARG}.Dockerfile
+      args: 
+        workspace_path: ${WORKSPACE_PATH}
+    tty: true
+    runtime: nvidia
+    environment: # used inside a docker.
+      - DEBUG=  
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - DISPLAY=unix${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    container_name: ${WORKSPACE_NAME}
+    ipc: host
+    shm_size: 256M
+    network_mode: host
+    privileged: true
+    volumes:
+      # - ${YOUR}/${DATASET}:/root/dataset
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /root/.Xauthority:/root/.Xauthority
+      - /dev/dri:/dev/dri                       #X11 stuff
+      - /dev/snd:/dev/snd                       #X11 stuff
+      - ${WORKSPACE_PATH}:/root/workspace
+      - ${DATASET_PATH}:/root/workspace/dataset_root
+      # connect devices
+    # entrypoint:
+    command: bash
+
+  build_docker_images_cpu:
+    image: ${DOCKER_IMAGE}
+    build:
+      context: ./
+      dockerfile: ./${DOCKER_ARG}.Dockerfile
+      args: 
+        workspace_path: ${WORKSPACE_PATH}
+    tty: true
+    environment: # used inside a docker.
+      - DEBUG=        
+      - DISPLAY=unix${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    container_name: ${WORKSPACE_NAME}
+    ipc: host
+    shm_size: 256M
+    network_mode: host
+    privileged: true
+    volumes:
+      # - ${YOUR}/${DATASET}:/root/dataset
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /root/.Xauthority:/root/.Xauthority
+      - /dev/dri:/dev/dri                       #X11 stuff
+      - /dev/snd:/dev/snd                       #X11 stuff
+      - ${WORKSPACE_PATH}:/root/workspace
+      - ${DATASET_PATH}:/root/workspace/dataset_root
+      # connect devices
+    # entrypoint:
+    command: bash 
+
