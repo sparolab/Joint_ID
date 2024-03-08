@@ -7,9 +7,9 @@ This repository represents the official implementation of the paper titled "Tran
 
 [![ProjectPage](fig/badges/badge-website.svg)](https://sites.google.com/view/joint-id/home)
 [![Paper](https://img.shields.io/badge/📄%20Paper-PDF-yellow)](https://ieeexplore.ieee.org/abstract/document/10351035)
-[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/watch?v=JRD_xuqtHZU) 
-[![Docker](https://badges.aleen42.com/src/docker.svg)](https://www.youtube.com/watch?v=JRD_xuqtHZU)
-<br/>
+[![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/watch?v=1GOoHCSpNXE&t=3s) 
+[![Docker](https://badges.aleen42.com/src/docker.svg)](https://hub.docker.com/r/ygm7422/official_joint_id)
+
 
 [Geonmo Yang](https://scholar.google.com/citations?user=kiBTkqMAAAAJ&hl=en&oi=sra),
 [Gilhwan Kang](https://scholar.google.com/citations?user=F6dY8DoAAAAJ&hl=ko),
