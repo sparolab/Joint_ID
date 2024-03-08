@@ -45,8 +45,6 @@ We propose a novel approach for enhancing underwater images that leverages the b
 4. [**⚙️ Inference settings**](#⚙️-inference-settings) 
 
 
-<br/>
-
 ## 🛠️ Setup
 ### 📦 Prepare Repository & Checkpoints
 1. Clone the repository (requires git):
@@ -60,7 +58,6 @@ We propose a novel approach for enhancing underwater images that leverages the b
 
 3. Download a checkpoint [`joint_id_ckpt.pth`](https://www.dropbox.com/scl/fo/rn49h1r54uqsdsjs896jf/h?rlkey=u0yypv3y7y5lm20a81vqcjyxm&dl=0) of our model on path `${Joint-ID_root}/Joint_ID`.
 
-<br/>
 
 ### ⬇ Prepare Dataset
 1. Download the [Joint_ID_Dataset.zip](https://www.dropbox.com/scl/fo/olr8awsue6uion5fng25j/h?rlkey=jy6pbnbop6ppc0703it7lmite&dl=0)
@@ -95,7 +92,6 @@ We propose a novel approach for enhancing underwater images that leverages the b
 
 5. See the [project page](https://sites.google.com/view/joint-id/home) for additional dataset details.
 
-<br/>
 
 ### 🐋 Prepare Docker Image and Run the Docker Container
 To run a docker container, we need to create a docker image. There are two ways to create a docker image and run the docker container.
@@ -139,9 +135,6 @@ To run a docker container, we need to create a docker image. There are two ways 
 Regardless of whether you use method 1 or 2, you should have a docker container named `joint-id` running.
 
 
-
-<br/>
-
 ## 🚀 Traning or Testing for Joint-ID 
 
 ### 🚀 Training for Joint-ID on Joint-ID Dataset
@@ -156,7 +149,6 @@ Regardless of whether you use method 1 or 2, you should have a docker container 
 2. The model's checkpoints and log files are saved in the `/root/workspace/save` folder.
 3. If you want to change the default variable setting for training, see [**Inference settings**](#⚙️-inference-settings) below.
 
-<br/>
 
 ### 🚀 Testing for Joint-ID on Joint-ID Dataset
 1. First, move to the `/root/workspace` folder inside the docker container. Then, run the following command to start the testing.
@@ -171,7 +163,6 @@ Regardless of whether you use method 1 or 2, you should have a docker container 
 
 3. If you want to change the default variable setting for testing, see [**Inference settings**](#⚙️-inference-settings) below.
 
-<br/>
 
 ### 🚀 Testing for Joint-ID on Standard or Custom Dataset
 1. Set the dataset related variables in the `local_configs/cfg/joint.diml.joint_id.py` file. Below, enter the input image path in the `sample_test_data_path` variable.
@@ -204,14 +195,10 @@ Regardless of whether you use method 1 or 2, you should have a docker container 
 
 3. The test images and results are saved in the `sample_eval_result_joint.diml.joint_id` folder.
 
-<br/>
-
-
 
 ## ⚙️ Inference settings
 TODO....
 
-<br/><br/>
 
 ## 🎓 Citation
 Please cite our paper:
