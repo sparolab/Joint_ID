@@ -61,12 +61,12 @@ We propose a novel approach for enhancing underwater images that leverages the b
 
 2. Let's call the path where Joint-ID's repository is located `${Joint-ID_root}`.
 
-3. Download a checkpoint [`joint_id_ckpt.pth`](https://www.dropbox.com/scl/fo/rn49h1r54uqsdsjs896jf/h?rlkey=u0yypv3y7y5lm20a81vqcjyxm&dl=0) of our model on path `${Joint-ID_root}/Joint_ID`.
+3. Download a checkpoint [**joint_id_ckpt.pth**](https://www.dropbox.com/scl/fo/rn49h1r54uqsdsjs896jf/h?rlkey=u0yypv3y7y5lm20a81vqcjyxm&dl=0) of our model on path `${Joint-ID_root}/Joint_ID`.
 
 <br/>
 
 ### ⬇ Prepare Dataset
-1. Download the [Joint_ID_Dataset.zip](https://www.dropbox.com/scl/fo/olr8awsue6uion5fng25j/h?rlkey=jy6pbnbop6ppc0703it7lmite&dl=0)
+1. Download the [**Joint_ID_Dataset.zip**](https://www.dropbox.com/scl/fo/olr8awsue6uion5fng25j/h?rlkey=jy6pbnbop6ppc0703it7lmite&dl=0)
 
 2. Next, unzip the file named `Joint_ID_Dataset.zip` with the downloaded path as `${dataset_root_path}`.
     ```bash
@@ -96,7 +96,7 @@ We propose a novel approach for enhancing underwater images that leverages the b
     ```
 4. After downloading, you should see the following file structure in the `Joint_ID_Dataset` folder
 
-5. See the [project page](https://sites.google.com/view/joint-id/home) for additional dataset details.
+5. If you want to know the dataset, then see the [project page](https://sites.google.com/view/joint-id/home) for additional dataset details.
 
 <br/>
 
@@ -139,7 +139,7 @@ To run a docker container, we need to create a docker image. There are two ways 
     docker exec -it Joint_ID bash
     ```
 
-Regardless of whether you use method 1 or 2, you should have a docker container named `joint-id` running.
+Regardless of whether you use method 1 or 2, you should have a docker container named `Joint_ID` running.
 
 <br/>
 
