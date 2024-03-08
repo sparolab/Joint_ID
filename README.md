@@ -155,7 +155,7 @@ Regardless of whether you use method 1 or 2, you should have a docker container 
     python run.py local_configs/arg_joint_train.txt
     ```
 2. The model's checkpoints and log files are saved in the `/root/workspace/save` folder.
-3. If you want to change the default variable setting for training, see [**Inference settings**](#⚙️-inference-settings) below.
+3. If you want to change the default variable setting for training, see [**Inference settings**](https://github.com/sparolab/Joint_ID?tab=readme-ov-file#%EF%B8%8F-inference-settings) below.
 
 <br/>
 
@@ -170,7 +170,7 @@ Regardless of whether you use method 1 or 2, you should have a docker container 
     ```
 2. The test images and results are saved in the `result_joint.diml.joint_id` folder.
 
-3. If you want to change the default variable setting for testing, see [**Inference settings**](#⚙️-inference-settings) below.
+3. If you want to change the default variable setting for testing, see [**Inference settings**](https://github.com/sparolab/Joint_ID?tab=readme-ov-file#%EF%B8%8F-inference-settings) below.
 
 <br/>
 
