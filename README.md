@@ -71,7 +71,9 @@ We propose a novel approach for enhancing underwater images that leverages the b
 
 2. Next, unzip the file named `Joint_ID_Dataset.zip` with the downloaded path as `${dataset_root_path}`.
     ```bash
+
     sudo unzip ${dataset_root_path}/Joint_ID_Dataset.zip   # ${dataset_root_path} requires at least 2.3 Gb of space.
+    # ${dataset_root_path} is the absolute path, not relative path.
     ```
 
 3. After downloading, you should see the following file structure in the `Joint_ID_Dataset` folder

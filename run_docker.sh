@@ -38,8 +38,6 @@ SERVICE=build_docker_images_${SERVICE_ARG}            # service name
 export DOCKER_ARG=${WORKSPACE_NAME}
 
 export DATASET_PATH=$3                            # dataset path define
-
-##### service name2 #####
 export DOCKER_IMAGE=ygm7422/official_joint_id:latest                                                               
 
 xhost +local:docker

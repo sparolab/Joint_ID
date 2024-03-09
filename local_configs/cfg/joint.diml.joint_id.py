@@ -56,13 +56,12 @@ dataset = dict(
                eval_enhanced_gt_path='dataset_root/test',
                eval_txt_file='dataset_root/test.txt',
           
-               test_data_path='dataset_root/Dataset/SPARO/Joint_ID_Dataset/test/synthetic',
-               test_depth_gt_path='dataset_root/Dataset/SPARO/Joint_ID_Dataset/test',
-               test_enhanced_gt_path='dataset_root/Dataset/SPARO/Joint_ID_Dataset/test',
-               test_txt_file='dataset_root/Dataset/SPARO/Joint_ID_Dataset/test.txt',
+               test_data_path='dataset_root/test/synthetic',
+               test_depth_gt_path='dataset_root/test',
+               test_enhanced_gt_path='dataset_root/test',
+               test_txt_file='dataset_root/test.txt',
 
-               # sample_test_data_path='${your standard or custom dataset}',
-               sample_test_data_path='dataset_root/Dataset/SPARO/Joint_ID_Dataset/test/synthetic',
+               sample_test_data_path='${your standard or custom dataset}',
                video_txt_file=''
                )
 
