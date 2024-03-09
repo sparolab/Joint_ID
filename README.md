@@ -9,7 +9,7 @@ This repository represents the official implementation of the paper titled "Tran
 [![Paper](https://img.shields.io/badge/📄%20Paper-PDF-yellow)](https://ieeexplore.ieee.org/abstract/document/10351035)
 [![YouTube](https://badges.aleen42.com/src/youtube.svg)](https://www.youtube.com/watch?v=1GOoHCSpNXE&t=3s) 
 [![Docker](https://badges.aleen42.com/src/docker.svg)](https://hub.docker.com/r/ygm7422/official_joint_id)
-
+[![License](https://img.shields.io/badge/License-GPL--3.0-929292)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 [Geonmo Yang](https://scholar.google.com/citations?user=kiBTkqMAAAAJ&hl=en&oi=sra),
 [Gilhwan Kang](https://scholar.google.com/citations?user=F6dY8DoAAAAJ&hl=ko),
@@ -66,6 +66,7 @@ We propose a novel approach for enhancing underwater images that leverages the b
 <br/>
 
 ### ⬇ Prepare Dataset
+![dataset](fig/dataset.png)
 1. Download the [**Joint_ID_Dataset.zip**](https://www.dropbox.com/scl/fo/olr8awsue6uion5fng25j/h?rlkey=jy6pbnbop6ppc0703it7lmite&dl=0)
 
 2. Next, unzip the file named `Joint_ID_Dataset.zip` with the downloaded path as `${dataset_root_path}`.
@@ -208,7 +209,16 @@ Regardless of whether you use method 1 or 2, you should have a docker container 
 <br/>
 
 ## ⚙️ Inference settings
-TODO....
+We set the hyperparameters in 'local_configs/cfg/joint.diml.joint_id.py'. 
+
+`depth_range`: Range of depth we want to estimate
+
+`image_size`: the size of the input image data. If you set this variable, make sure to set `auto_crop` to False in `train_dataloader_cfg`, or `eval_dataloader_cfg`, or `test_dataloader_cfg`, or `sample_test_cfg` below. If you do not want to set `image_size`, please set `auto_crop` to True. `auto_crop` will be input to the model at the original size of the input data.
+
+`train_parm`: hyperparameters to set when training.
+
+`test_parm`: hyperparameters to set when testing.
+
 
 <br/>
 
@@ -224,4 +234,9 @@ Please cite our paper:
 }
 ```
 
+<br/>
 
+##  🎫 License
+This work is licensed under the GPL License, Version 3.0 (as defined in the [LICENSE](LICENSE)).
+
+[![License](https://img.shields.io/badge/License-GPL--3.0-929292)](https://www.gnu.org/licenses/gpl-3.0.html)

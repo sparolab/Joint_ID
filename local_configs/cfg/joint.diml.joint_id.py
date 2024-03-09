@@ -9,10 +9,6 @@ image_size = dict(input_height=288,
                   input_width=512
                   )
 
-# image_size = dict(input_height=720*2//3,
-#                   input_width=1280*2//3
-#                   )
-
 train_parm = dict(num_threads=4,
                   batch_size=7,
                   num_epochs=5,
@@ -23,8 +19,7 @@ train_parm = dict(num_threads=4,
 
 test_parm = dict(test_checkpoint_path='joint_id_ckpt.pth',
                  is_save_gt_image=False,
-                 is_save_input_image=True,
-                 is_save_attn=True
+                 is_save_input_image=True
                  )
 
 
@@ -138,7 +133,7 @@ basic_cfg = dict(model_cfg = dict(type='Build_Structure',
                                              dataloader_dict = dict(type='Joint_De_Eh_Preprocess',
                                                                     auto_crop=False,
                                                                     img_size=(image_size['input_height'], image_size['input_width']),
-                                                                    argumentation = dict(do_resize_crop=True,
+                                                                    argumentation = dict(do_resize_crop=False,
                                                                                          do_center_crop=True,
                                                                                          do_random_crop=False,
                                                                                          do_random_rotate=True,
@@ -224,15 +219,5 @@ basic_cfg = dict(model_cfg = dict(type='Build_Structure',
                                                           dict(type='Joint_UW_Enhancement_Evaluator', 
                                                                is_checkpoint_save=etc['is_checkpoint_save']),
                                                           ]
-                                      ),
-                               
-                 sample_eval_cfg = dict(type='Build_Sample_Evaluator',
-                                      sample_eval_log_comment='result_jointlearning.diml.jointformer_rln_final',
-                                      save_dir='./',
-                                      evaluator_cfg_list=[dict(type='Sample_DepthEstimation_Evaluator',
-                                                               img_size=(image_size['input_height'], image_size['input_width']),
-                                                               is_do_crop=True,
-                                                               eval_dir=dataset['sample_test_data_path'],
-                                                               is_txt_save=True)]
-                                      ),
+                                      )
                  )                 

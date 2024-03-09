@@ -181,8 +181,6 @@ class Joint_Model_Test(object):
                 pred_enhanced_scaled = pred_enhanced_scaled.astype(np.uint8) 
                 Image.fromarray(pred_enhanced_scaled).save(filename_pred_png)
 
-                if self.opt.is_save_attn is True:
-                    channels, height, width = pred_enhanced.shape
                     
                 filename_pred_png = save_name + '/depth_output/' + '_' + save_image_tag.replace('/','_').replace('.jpg', '.png')
                 
