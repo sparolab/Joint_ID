@@ -61,7 +61,8 @@ dataset = dict(
                test_enhanced_gt_path='dataset_root/test',
                test_txt_file='dataset_root/test.txt',
 
-               sample_test_data_path='${your standard or custom dataset}',
+               # sample_test_data_path='${your standard or custom dataset}',
+               sample_test_data_path='demo',
                video_txt_file=''
                )
 

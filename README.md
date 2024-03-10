@@ -191,7 +191,8 @@ Regardless of whether you use method 1 or 2, you should have a docker container 
     dataset = dict(
                train_data_path='dataset_root/train/synthetic',
                ...
-               sample_test_data_path='${your standard or custom dataset path}',
+               # sample_test_data_path='${your standard or custom dataset path}',
+               sample_test_data_path='demo',
                video_txt_file=''
                )
     ...
