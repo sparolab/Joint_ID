@@ -127,19 +127,19 @@ class Joint_Model_Samples_Test(object):
                     revised_width = 32 * (width // 32)
                     revised_height = 32 * (height // 32)
                     
-                    top_margin = int((height - revised_height) / 2) 
-                    left_margin = int((width - revised_width) / 2)     
+                    # top_margin = int((height - revised_height) / 2) 
+                    # left_margin = int((width - revised_width) / 2)     
 
-                    bottom_margin = int(top_margin + revised_height)
-                    right_margin = int(left_margin + revised_width)
+                    # bottom_margin = int(top_margin + revised_height)
+                    # right_margin = int(left_margin + revised_width)
                     
                     do_resize_crop = False
                                     
                 else:
-                    revised_width = self.opt.sample_test_cfg['img_size'][1]
-                    revised_height = self.opt.sample_test_cfg['img_size'][0]
-                    revised_width = 32 * (revised_width // 32)
-                    revised_height = 32 * (revised_height // 32)
+                    resized_width = self.opt.sample_test_cfg['img_size'][1]
+                    resized_height = self.opt.sample_test_cfg['img_size'][0]
+                    revised_width = 32 * (resized_width // 32)
+                    revised_height = 32 * (resized_height // 32)
                     
                     if self.opt.sample_test_cfg['do_resize_crop'] is True:
                         do_resize_crop = True
@@ -155,7 +155,7 @@ class Joint_Model_Samples_Test(object):
                             do_resize_crop = False
 
                                 
-                if do_resize_crop:
+                if self.opt.sample_test_cfg['auto_crop'] == True or do_resize_crop == True:
                     data = cv2.resize(data, (revised_width, revised_height), interpolation=cv2.INTER_CUBIC)
                 else:
                     data = data[top_margin:bottom_margin, left_margin:right_margin, :]
@@ -167,17 +167,42 @@ class Joint_Model_Samples_Test(object):
                 pred_enhanced = enhanced_est[0].cpu().numpy().transpose(1,2,0)
                 pred_enhanced_scaled = pred_enhanced * 255.0
                 pred_enhanced_scaled = pred_enhanced_scaled.astype(np.uint8) 
-                Image.fromarray(pred_enhanced_scaled).save(os.path.join(save_enhanced_name, frame_name))
-
+                
+                if self.opt.sample_test_cfg['auto_crop'] == True:
+                    pred_enhanced_scaled = Image.fromarray(pred_enhanced_scaled).resize((width, height), Image.BICUBIC)
+                    pred_enhanced_scaled.save(os.path.join(save_enhanced_name, frame_name))                
+                elif do_resize_crop:
+                    pred_enhanced_scaled = Image.fromarray(pred_enhanced_scaled).resize((resized_width, resized_height), Image.BICUBIC)
+                    pred_enhanced_scaled.save(os.path.join(save_enhanced_name, frame_name))
+                else:
+                    Image.fromarray(pred_enhanced_scaled).save(os.path.join(save_enhanced_name, frame_name))
 
                 pred_depth = depth_est.cpu().numpy().squeeze()
                 pred_depth_scaled = pred_depth * float(1000)
                 pred_depth_scaled = pred_depth_scaled.astype(np.uint16)         
-                Image.fromarray(pred_depth_scaled).save(os.path.join(save_depth_raw_name, frame_name.replace('.jpg', '.png')))
+                
+                
+                if self.opt.sample_test_cfg['auto_crop'] == True:
+                    pred_depth_scaled = Image.fromarray(pred_depth_scaled).resize((width, height), Image.NEAREST)
+                    pred_depth_scaled.save(os.path.join(save_depth_raw_name, frame_name.replace('.jpg', '.png')))                         
+                elif do_resize_crop:
+                    pred_depth_scaled = Image.fromarray(pred_depth_scaled).resize((resized_width, resized_height), Image.NEAREST)
+                    pred_depth_scaled.save(os.path.join(save_depth_raw_name, frame_name.replace('.jpg', '.png')))                    
+                else:
+                    Image.fromarray(pred_depth_scaled).save(os.path.join(save_depth_raw_name, frame_name.replace('.jpg', '.png')))
 
+                
                 attn_visualizer = AttentionMapVisualizing(head_fusion='mean', discard_ratio=0.8)
                 atten_mask_list = attn_visualizer([depth_est])
                 
                 image = attn_visualizer.show_mask(mask=1/np.array(atten_mask_list[0].cpu()), color=cv2.COLORMAP_INFERNO)
-                cv2.imwrite(os.path.join(save_depth_normalised_name, frame_name), image)    
+
+                if self.opt.sample_test_cfg['auto_crop'] == True:
+                    image = cv2.resize(image, (width, height), interpolation=cv2.INTER_NEAREST)
+                    cv2.imwrite(os.path.join(save_depth_normalised_name, frame_name), image)                       
+                elif do_resize_crop:
+                    image = cv2.resize(image, (resized_width, resized_height), interpolation=cv2.INTER_NEAREST)
+                    cv2.imwrite(os.path.join(save_depth_normalised_name, frame_name), image)    
+                else:
+                    cv2.imwrite(os.path.join(save_depth_normalised_name, frame_name), image)    
     

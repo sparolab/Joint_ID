@@ -202,7 +202,7 @@ basic_cfg = dict(model_cfg = dict(type='Build_Structure',
 
                  sample_test_cfg = dict(auto_crop=True,
                                        img_size=(image_size['input_height'], image_size['input_width']),
-                                       do_resize_crop=True,
+                                       do_resize_crop=False,
                                        do_center_crop=False,
                                        sample_data_path=dataset['sample_test_data_path']
                                        ),  
