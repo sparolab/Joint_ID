@@ -11,6 +11,7 @@ This repository represents the official implementation of the paper titled "Tran
 [![Docker](https://badges.aleen42.com/src/docker.svg)](https://hub.docker.com/r/ygm7422/official_joint_id)
 [![License](https://img.shields.io/badge/License-GPL--3.0-929292)](https://www.gnu.org/licenses/gpl-3.0.html)
 
+
 [Geonmo Yang](https://scholar.google.com/citations?user=kiBTkqMAAAAJ&hl=en&oi=sra),
 [Gilhwan Kang](https://scholar.google.com/citations?user=F6dY8DoAAAAJ&hl=ko),
 [Juhhui Lee](https://scholar.google.com/citations?user=4-5Fi9kAAAAJ&hl=en),
@@ -31,6 +32,8 @@ We propose a novel approach for enhancing underwater images that leverages the b
   - Ubuntu 22.04 LTS, Python 3.10.12, CUDA 11.7, GeForce RTX 3090 (pip)
   - Ubuntu 22.04 LTS, Python 3.8.6, CUDA 12.0, RTX A6000 (pip)
   - Ubuntu 20.04 LTS, Python 3.10.12, CUDA 12.1, GeForce RTX 3080ti (pip)
+
+<a name="readme-table"></a>
 
 ## 🚀 Contents Table
 ### 🛠️ Setup
@@ -64,6 +67,7 @@ We propose a novel approach for enhancing underwater images that leverages the b
 3. Download a checkpoint [**joint_id_ckpt.pth**](https://www.dropbox.com/scl/fo/rn49h1r54uqsdsjs896jf/h?rlkey=u0yypv3y7y5lm20a81vqcjyxm&dl=0) of our model on path `${Joint-ID_root}/Joint_ID`.
 
 <br/>
+<p align="right">(<a href="#readme-table">back to table</a>)</p>
 
 ### ⬇ Prepare Dataset
 ![dataset](fig/dataset.png)
@@ -102,6 +106,7 @@ We propose a novel approach for enhancing underwater images that leverages the b
 5. If you want to know the dataset, then see the [project page](https://sites.google.com/view/joint-id/home) for additional dataset details.
 
 <br/>
+<p align="right">(<a href="#readme-table">back to table</a>)</p>
 
 ### 🐋 Prepare Docker Image and Run the Docker Container
 To run a docker container, we need to create a docker image. There are two ways to create a docker image and run the docker container.
@@ -145,6 +150,7 @@ To run a docker container, we need to create a docker image. There are two ways 
 Regardless of whether you use method 1 or 2, you should have a docker container named `Joint_ID` running.
 
 <br/>
+<p align="right">(<a href="#readme-table">back to table</a>)</p>
 
 ## 🚀 Traning or Testing for Joint-ID 
 
@@ -161,6 +167,7 @@ Regardless of whether you use method 1 or 2, you should have a docker container 
 3. If you want to change the default variable setting for training, see [**Inference settings**](https://github.com/sparolab/Joint_ID?tab=readme-ov-file#%EF%B8%8F-inference-settings) below.
 
 <br/>
+<p align="right">(<a href="#readme-table">back to table</a>)</p>
 
 ### 🚀 Testing for Joint-ID on Joint-ID Dataset
 1. First, move to the `/root/workspace` folder inside the docker container. Then, run the following command to start the testing.
@@ -176,6 +183,7 @@ Regardless of whether you use method 1 or 2, you should have a docker container 
 3. If you want to change the default variable setting for testing, see [**Inference settings**](https://github.com/sparolab/Joint_ID?tab=readme-ov-file#%EF%B8%8F-inference-settings) below.
 
 <br/>
+<p align="right">(<a href="#readme-table">back to table</a>)</p>
 
 ### 🚀 Testing for Joint-ID on Standard or Custom Dataset
 1. Set the dataset related variables in the `local_configs/cfg/joint.diml.joint_id.py` file. Below, enter the input image path in the `sample_test_data_path` variable.
@@ -210,6 +218,7 @@ Regardless of whether you use method 1 or 2, you should have a docker container 
 3. The test images and results are saved in the `sample_eval_result_joint.diml.joint_id` folder.
 
 <br/>
+<p align="right">(<a href="#readme-table">back to table</a>)</p>
 
 ## ⚙️ Inference settings
 We set the hyperparameters in 'local_configs/cfg/joint.diml.joint_id.py'. 
@@ -222,8 +231,8 @@ We set the hyperparameters in 'local_configs/cfg/joint.diml.joint_id.py'.
 
 `test_parm`: hyperparameters to set when testing.
 
-
 <br/>
+<p align="right">(<a href="#readme-table">back to table</a>)</p>
 
 ## 🎓 Citation
 Please cite our paper:
@@ -238,8 +247,19 @@ Please cite our paper:
 ```
 
 <br/>
+<p align="right">(<a href="#readme-table">back to table</a>)</p>
+
+##  ✉️ Contact
+
+Geonmo Yang: ygm7422@gmail.com
+
+Project Link: [https://sites.google.com/view/joint-id/home](https://sites.google.com/view/joint-id/home)
+
+<br/>
+<p align="right">(<a href="#readme-table">back to table</a>)</p>
 
 ##  🎫 License
 This work is licensed under the GPL License, Version 3.0 (as defined in the [LICENSE](LICENSE)).
 
 [![License](https://img.shields.io/badge/License-GPL--3.0-929292)](https://www.gnu.org/licenses/gpl-3.0.html)
+
