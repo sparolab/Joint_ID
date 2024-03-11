@@ -51,6 +51,8 @@ We propose a novel approach for enhancing underwater images that leverages the b
 
 5. [**🎓 Citation**](https://github.com/sparolab/Joint_ID?tab=readme-ov-file#-citation)
 
+6. [**✉️ Contact**](https://github.com/sparolab/Joint_ID?tab=readme-ov-file#%EF%B8%8F-contact)
+
 <br/>
 
 ## 🛠️ Setup
